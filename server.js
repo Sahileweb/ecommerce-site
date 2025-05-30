@@ -4,7 +4,7 @@ const path = require('path');
 const userRoutes = require('./routes/userRoutes'); 
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 
 mongoose.connect('mongodb://localhost:27017/myproductdb', {
@@ -17,11 +17,11 @@ mongoose.connect('mongodb://localhost:27017/myproductdb', {
 app.use(express.json());
 app.use('/api', userRoutes);
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname,'signup.html'));
+  res.sendFile(path.join(__dirname,'index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
