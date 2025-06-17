@@ -15,9 +15,12 @@ if (bar) {
 }
 
 //             connect                            // 
-fetch('/api/products')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => console.error('Error fetching products:', error));
+// fetch('/api/products')
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => console.error('Error fetching products:', error));
+
+
+  
